@@ -22,9 +22,9 @@ app.use("/api/v1/doctor", require("./routes/doctorRoutes"));
 
 
 
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(
     `Server Running in ${process.env.NODE_MODE} Mode on port ${PORT}`
       .bgCyan.white
