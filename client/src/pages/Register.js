@@ -1,6 +1,6 @@
 import "../styles/RegiserStyles.css";
 import { Form, Input, message } from "antd";
-import axios from "axios";
+import API from "../utils/api";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
@@ -11,7 +11,7 @@ const Register = () => {
   const onfinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("/api/v1/user/register", values);
+      const res = await API.post("/api/v1/user/register", values);
       dispatch(hideLoading());
       if (res.data.success) {
         message.success("Register Successfully!");
